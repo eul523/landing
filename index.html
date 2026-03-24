@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcomSales.store - Launch a high-converting online store in 60 seconds. AI-powered dropshipping, automated sales, and 300%+ average revenue growth.">
+    <title>EcomSales.store • AI That Sells For You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --tw-color-primary: #00d4ff;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .tailwind-configured {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(90deg, #0a0a2a 0%, #001f3f 100%);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            width: 64px;
+            height: 3px;
+            background: #00d4ff;
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgb(0 212 255 / 0.15);
+        }
+        
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 40%;
+            height: 300%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-25deg);
+            animation: shimmer 4s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            100% {
+                transform: translateX(200%);
+            }
+        }
+    </style>
+</head>
+<body class="tailwind-configured">
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-x-2">
+                    <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-inner">
+                        🛒
+                    </div>
+                    <div>
+                        <span class="heading-font text-3xl font-semibold tracking-[-1px] text-gray-900">ecomsales</span>
+                        <span class="text-cyan-500 font-medium text-xl ml-1">.store</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#features" class="hover:text-cyan-600 text-gray-700 flex items-center gap-x-1">
+                        <i class="fa-solid fa-rocket"></i>
+                        Features
+                    </a>
+                    <a href="#how" class="hover:text-cyan-600 text-gray-700 flex items-center gap-x-1">
+                        <i class="fa-solid fa-circle-play"></i>
+                        How it Works
+                    </a>
+                    <a href="#pricing" class="hover:text-cyan-600 text-gray-700 flex items-center gap-x-1">
+                        <i class="fa-solid fa-tag"></i>
+                        Pricing
+                    </a>
+                    <a href="#success" class="hover:text-cyan-600 text-gray-700 flex items-center gap-x-1">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Success Stories
+                    </a>
+                    <div class="h-3 w-px bg-gray-200"></div>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 font-medium">Log in</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex items-center gap-x-4">
+                    <button onclick="window.location.href='#get-started'" 
+                            class="px-6 py-3 text-sm font-semibold rounded-2xl border border-gray-200 hover:border-gray-300 hidden sm:flex items-center gap-x-2">
+                        <i class="fa-solid fa-store"></i>
+                        Browse Store
+                    </button>
+                    
+                    <button onclick="window.location.href='#get-started'" 
+                            class="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-semibold rounded-3xl flex items-center gap-x-2 shadow-lg shadow-cyan-500/30 hover:shadow-xl">
+                        <span>Start Free Trial</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <!-- Mobile Hamburger -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-gray-700">
+                        <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-8 pb-6 border-t bg-white">
+                <div class="flex flex-col gap-y-4 pt-6 text-lg font-medium">
+                    <a href="#features" class="flex items-center gap-x-3 py-2">🚀 Features</a>
+                    <a href="#how" class="flex items-center gap-x-3 py-2">▶️ How it Works</a>
+                    <a href="#pricing" class="flex items-center gap-x-3 py-2">💰 Pricing</a>
+                    <a href="#success" class="flex items-center gap-x-3 py-2">📈 Success Stories</a>
+                    <div class="pt-4 border-t">
+                        <button onclick="window.location.href='#get-started'" 
+                                class="w-full py-4 bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-semibold rounded-3xl">
+                            Start Free Trial • 60-Second Setup
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg text-white">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-20 lg:pb-24 grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="max-w-xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-4 h-9 rounded-3xl mb-6 backdrop-blur-md">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    LIVE: 1,847 stores launched today
+                </div>
+                
+                <h1 class="heading-font text-6xl lg:text-7xl leading-none font-semibold tracking-[-2px] mb-6">
+                    The only store<br>you'll ever need to<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">10× your sales</span>
+                </h1>
+                
+                <p class="text-2xl text-cyan-100 mb-8">
+                    EcomSales.store gives you a complete, AI-powered online store + automated selling system in under 60 seconds.<br>
+                    <span class="font-semibold text-white">No coding. No inventory risk. Real revenue from day one.</span>
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="window.location.href='#get-started'" 
+                            class="cta-button px-10 py-5 bg-white text-gray-900 rounded-3xl font-semibold text-xl flex items-center gap-x-3 hover:scale-105">
+                        <i class="fa-solid fa-rocket"></i>
+                        LAUNCH MY STORE FREE
+                    </button>
+                    
+                    <button onclick="watchDemo()" 
+                            class="px-8 py-5 border border-white/60 hover:border-white/90 rounded-3xl font-medium flex items-center gap-x-3 text-lg">
+                        <i class="fa-solid fa-circle-play text-3xl"></i>
+                        47-second demo
+                    </button>
+                </div>
+                
+                <!-- Trust signals -->
+                <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check-circle text-cyan-400"></i>
+                        <span>4.98/5 from 12,894 store owners</span>
+                    </div>
+                    <div class="flex -space-x-4">
+                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-xs ring-2 ring-cyan-500 font-bold text-cyan-600">S</div>
+                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-xs ring-2 ring-cyan-500 font-bold text-cyan-600">W</div>
+                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-xs ring-2 ring-cyan-500 font-bold text-cyan-600">A</div>
+                    </div>
+                    <p class="text-cyan-200">Featured in Shopify, Forbes &amp; Entrepreneur</p>
+                    <div class="flex items-center text-emerald-400 font-medium">
+                        <i class="fa-solid fa-arrow-trend-up mr-1"></i>
+                        +347% avg. revenue in first 30 days
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right side visual -->
+            <div class="relative hidden md:block">
+                <div class="bg-white/10 backdrop-blur-3xl rounded-3xl p-3 shadow-2xl border border-white/20">
+                    <div class="bg-[#0f172a] rounded-3xl p-8 text-white relative overflow-hidden">
+                        <!-- Fake dashboard -->
+                        <div class="flex justify-between mb-8">
+                            <div>
+                                <div class="text-cyan-400 text-sm font-medium">Today’s sales</div>
+                                <div class="text-6xl font-semibold heading-font">$8,942</div>
+                                <div class="text-emerald-400 flex items-center text-sm">
+                                    <i class="fa-solid fa-caret-up mr-1"></i> +184% from yesterday
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="px-4 py-2 bg-emerald-400/20 text-emerald-400 rounded-2xl text-sm inline-flex items-center">
+                                    <i class="fa-solid fa-fire mr-2"></i>
+                                    AI just closed 3 more orders
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-white/10 rounded-2xl p-4">
+                                <div class="text-cyan-400 text-4xl mb-1">142</div>
+                                <div class="text-xs uppercase tracking-widest">Visitors now</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4">
+                                <div class="text-cyan-400 text-4xl mb-1">31</div>
+                                <div class="text-xs uppercase tracking-widest">Orders today</div>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl p-4">
+                                <div class="text-cyan-400 text-4xl mb-1">9</div>
+                                <div class="text-xs uppercase tracking-widest">AI upsells</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -right-4 bg-gradient-to-br from-cyan-400 to-blue-500 text-white text-sm font-semibold px-6 py-2 rounded-3xl flex items-center shadow-xl">
+                            Your store is LIVE <span class="ml-2 text-2xl">🚀</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating badges -->
+                <div class="absolute -top-6 -left-6 bg-white text-gray-900 px-5 h-10 rounded-3xl flex items-center font-medium shadow-xl text-sm">
+                    <i class="fa-solid fa-droplet mr-2 text-cyan-500"></i>
+                    Dropshipping connected
+                </div>
+                <div class="absolute bottom-12 -right-8 bg-white text-gray-900 px-5 h-10 rounded-3xl flex items-center font-medium shadow-xl text-sm rotate-[-8deg]">
+                    AI wrote your product pages
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS BAR -->
+    <div class="bg-white py-6 border-b">
+        <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-semibold heading-font">47,291</div>
+                <div class="text-sm text-gray-500">Stores launched this month</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold heading-font text-emerald-500">$184M</div>
+                <div class="text-sm text-gray-500">Revenue generated last 30 days</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold heading-font">3.8s</div>
+                <div class="text-sm text-gray-500">Average time to first sale</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold heading-font">98.4%</div>
+                <div class="text-sm text-gray-500">Retention after 90 days</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold heading-font">4,291</div>
+                <div class="text-sm text-gray-500">AI-optimized products sold today</div>
+            </div>
+            <div class="col-span-3 md:col-span-1 flex items-center justify-center text-emerald-500 font-medium text-lg">
+                <i class="fa-solid fa-medal mr-3"></i>
+                #1 fastest-growing ecom platform 2026
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section id="features" class="max-w-screen-2xl mx-auto px-8 py-20">
+        <div class="text-center mb-12">
+            <span class="px-4 py-2 bg-cyan-100 text-cyan-700 rounded-3xl text-sm font-medium">POWERED BY AI • PROVEN BY REAL STORES</span>
+            <h2 class="heading-font text-5xl mt-4 tracking-[-1px]">Everything you need to sell more.<br>Nothing you don’t.</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Feature 1 -->
+            <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8">
+                <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center text-3xl mb-6">⚡</div>
+                <h3 class="text-2xl font-semibold mb-2">60-Second Store Launch</h3>
+                <p class="text-gray-600">Pick a niche → AI builds your entire Shopify-like store with products, copy, images &amp; checkout. Live in one minute.</p>
+                <div class="text-cyan-500 mt-8 flex items-center text-sm font-medium">Try it now <i class="fa-solid fa-arrow-right ml-2"></i></div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🤖</div>
+                <h3 class="text-2xl font-semibold mb-2">AI Sales Co-Pilot</h3>
+                <p class="text-gray-600">Our AI writes product descriptions, runs Facebook/Google ads, sends abandoned-cart emails, and even negotiates upsells automatically.</p>
+                <div class="text-cyan-500 mt-8 flex items-center text-sm font-medium">+312% conversion rate on average</div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-6">📦</div>
+                <h3 class="text-2xl font-semibold mb-2">Zero-Inventory Dropshipping</h3>
+                <p class="text-gray-600">Connected to 18 million products from AliExpress, CJDropshipping &amp; local warehouses. We fulfill, you keep 100% profit.</p>
+                <div class="mt-8 text-xs uppercase font-medium flex items-center gap-x-1 text-gray-400">Ships worldwide in 3-7 days</div>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8">
+                <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center text-3xl mb-6">📊</div>
+                <h3 class="text-2xl font-semibold mb-2">Predictive Analytics</h3>
+                <p class="text-gray-600">See which products will sell before you launch them. Real-time competitor spying + trend forecasting powered by AI.</p>
+            </div>
+            
+            <!-- Feature 5 -->
+            <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8">
+                <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-3xl mb-6">📧</div>
+                <h3 class="text-2xl font-semibold mb-2">Built-in Email &amp; SMS Empire</h3>
+                <p class="text-gray-600">Automated flows that recover 38% of lost sales and turn one-time buyers into repeat customers.</p>
+            </div>
+            
+            <!-- Feature 6 -->
+            <div class="card-hover bg-white border border-gray-100 rounded-3xl p-8">
+                <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-3xl mb-6">🔒</div>
+                <h3 class="text-2xl font-semibold mb-2">1-Click Export &amp; Scale</h3>
+                <p class="text-gray-600">Built on open standards. Export your store to Shopify, WooCommerce or keep growing on EcomSales.store forever.</p>
+                <div class="mt-8 text-cyan-600 text-sm font-medium">No lock-in. Ever.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="bg-gradient-to-b from-gray-50 to-white py-20">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-5xl tracking-[-1px]">Three steps.<br>Zero tech skills.<br>Real money in your account.</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                <div class="text-center">
+                    <div class="mx-auto w-16 h-16 bg-cyan-500 text-white rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">1</div>
+                    <h4 class="text-2xl font-semibold mb-3">Choose your winning niche</h4>
+                    <p class="text-gray-600">AI scans trending products across TikTok, Amazon &amp; Google. Pick one. Done.</p>
+                    <div class="mt-8 text-xs uppercase font-mono bg-white px-6 py-3 rounded-3xl inline-block shadow-sm">Example: “Eco-friendly pet gadgets”</div>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-16 h-16 bg-cyan-500 text-white rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">2</div>
+                    <h4 class="text-2xl font-semibold mb-3">AI builds your store</h4>
+                    <p class="text-gray-600">Professional design, SEO-optimized pages, payment gateway, and legal pages generated instantly.</p>
+                    <div class="text-cyan-400 mt-8 text-5xl">🚀</div>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-16 h-16 bg-cyan-500 text-white rounded-3xl flex items-center justify-center text-4xl mb-6 shadow-inner">3</div>
+                    <h4 class="text-2xl font-semibold mb-3">Watch the money roll in</h4>
+                    <p class="text-gray-600">AI starts advertising, fulfills orders, and sends follow-ups. You check your bank daily.</p>
+                    <div class="mt-10 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-3xl px-6 py-4 text-center text-sm font-medium">First sale in 3.8 seconds (record holder: @jennysstore)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / SUCCESS -->
+    <section id="success" class="max-w-screen-2xl mx-auto px-8 py-20 bg-white">
+        <h2 class="text-center heading-font text-5xl mb-12">Real people. Real stores.<br>Real results.</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="border border-gray-100 rounded-3xl p-8">
+                <div class="flex gap-x-3 mb-6">
+                    <div class="text-4xl">⭐️⭐️⭐️⭐️⭐️</div>
+                </div>
+                <p class="text-xl leading-tight">"I launched a phone accessory store on a Tuesday. Made $4,200 by Friday. The AI literally sells while I sleep."</p>
+                <div class="mt-8 flex items-center">
+                    <div class="w-10 h-10 bg-orange-200 rounded-2xl"></div>
+                    <div class="ml-4">
+                        <div class="font-semibold">Sarah Patel</div>
+                        <div class="text-sm text-gray-500">@glowcase.store • $187k last month</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border border-gray-100 rounded-3xl p-8">
+                <div class="flex gap-x-3 mb-6">
+                    <div class="text-4xl">⭐️⭐️⭐️⭐️⭐️</div>
+                </div>
+                <p class="text-xl leading-tight">"Switched from Shopify. Same products. 4× the sales in 21 days thanks to their AI ad writer and smart pricing engine."</p>
+                <div class="mt-8 flex items-center">
+                    <div class="w-10 h-10 bg-blue-200 rounded-2xl"></div>
+                    <div class="ml-4">
+                        <div class="font-semibold">Marcus Rivera</div>
+                        <div class="text-sm text-gray-500">@techgearhub • Quit his job week 3</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border border-gray-100 rounded-3xl p-8">
+                <div class="flex gap-x-3 mb-6">
+                    <div class="text-4xl">⭐️⭐️⭐️⭐️⭐️</div>
+                </div>
+                <p class="text-xl leading-tight">"Zero experience. Built a sustainable fashion store in 43 seconds. Already at $92k/month and growing 18% week over week."</p>
+                <div class="mt-8 flex items-center">
+                    <div class="w-10 h-10 bg-green-200 rounded-2xl"></div>
+                    <div class="ml-4">
+                        <div class="font-semibold">Elena Moreau</div>
+                        <div class="text-sm text-gray-500">@ecothreads.store • Featured in Vogue Business</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="bg-gray-900 text-white py-20">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-8 items-end">
+                <div class="md:col-span-4">
+                    <h2 class="heading-font text-5xl tracking-[-1px] leading-none mb-4">Choose your growth speed</h2>
+                    <p class="text-xl text-gray-400">14-day money-back guarantee. Cancel anytime. No contracts.</p>
+                    <div class="mt-8 flex items-center text-cyan-400">
+                        <i class="fa-solid fa-gift mr-2"></i>
+                        <span class="font-medium">First 5,000 users get first month for $1</span>
+                    </div>
+                </div>
+                
+                <!-- Starter -->
+                <div class="md:col-span-4 bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+                    <div class="uppercase text-cyan-400 text-sm font-medium mb-2">STARTER</div>
+                    <div class="flex items-baseline">
+                        <span class="text-7xl font-semibold heading-font">$29</span>
+                        <span class="text-xl ml-2 text-gray-400">/mo billed yearly</span>
+                    </div>
+                    <div class="text-sm text-gray-400 mt-1">or $39 monthly</div>
+                    
+                    <ul class="mt-8 space-y-4 text-gray-300">
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>1 AI-powered store</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Up to 500 products</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Basic AI marketing</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Community support</li>
+                    </ul>
+                    
+                    <button onclick="window.location.href='#get-started'" 
+                            class="mt-12 w-full py-5 text-lg font-semibold bg-white text-gray-900 rounded-3xl">Start Free 14 days</button>
+                </div>
+                
+                <!-- Pro – most popular -->
+                <div class="md:col-span-4 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-3xl p-8 relative scale-105 shadow-2xl">
+                    <div class="absolute -top-3 right-8 bg-white text-cyan-600 text-xs font-bold px-6 py-1 rounded-3xl">MOST POPULAR</div>
+                    
+                    <div class="uppercase text-white/90 text-sm font-medium mb-2">PRO GROWTH</div>
+                    <div class="flex items-baseline">
+                        <span class="text-7xl font-semibold heading-font">$79</span>
+                        <span class="text-xl ml-2 text-white/70">/mo billed yearly</span>
+                    </div>
+                    <div class="text-sm text-white/70 mt-1">or $99 monthly</div>
+                    
+                    <ul class="mt-8 space-y-4 text-white">
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Unlimited stores &amp; products</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Advanced AI co-pilot</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Facebook + Google ads automation</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Priority 24/7 expert support</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>White-label option</li>
+                    </ul>
+                    
+                    <button onclick="window.location.href='#get-started'" 
+                            class="mt-12 w-full py-5 text-lg font-semibold bg-white text-gray-900 rounded-3xl">Get Pro • $1 first month</button>
+                </div>
+                
+                <!-- Enterprise -->
+                <div class="md:col-span-4 bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
+                    <div class="uppercase text-cyan-400 text-sm font-medium mb-2">ENTERPRISE</div>
+                    <div class="flex items-baseline">
+                        <span class="text-7xl font-semibold heading-font">Custom</span>
+                    </div>
+                    <div class="text-sm text-gray-400 mt-1">For teams &amp; agencies</div>
+                    
+                    <ul class="mt-8 space-y-4 text-gray-300">
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Multiple team accounts</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Dedicated AI strategist</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Custom integrations</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check mr-3"></i>Private fulfillment network</li>
+                    </ul>
+                    
+                    <button onclick="window.location.href='#get-started'" 
+                            class="mt-12 w-full py-5 text-lg font-semibold border border-white hover:bg-white/10 rounded-3xl">Talk to sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="get-started" class="py-20 bg-gradient-to-br from-cyan-500 to-blue-600 text-white">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <h2 class="heading-font text-6xl max-w-2xl mx-auto tracking-[-2px]">Your first profitable store is one click away</h2>
+            <p class="mt-6 text-2xl max-w-md mx-auto">Join 47,291 store owners already making money on EcomSales.store</p>
+            
+            <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="fakeLaunch()" 
+                        class="cta-button px-16 py-7 text-3xl font-semibold rounded-3xl bg-white text-gray-900 flex items-center gap-x-4 text-left">
+                    <div>
+                        LAUNCH STORE<br>
+                        <span class="text-xl font-normal text-gray-500">Takes 60 seconds • Free forever trial</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right text-4xl"></i>
+                </button>
+                
+                <div class="text-sm max-w-[180px] text-white/80 text-left">
+                    No credit card needed.<br>
+                    Cancel anytime.<br>
+                    <span class="font-medium text-white">Your store will be live before your coffee gets cold.</span>
+                </div>
+            </div>
+            
+            <p class="text-white/60 mt-8 text-sm">ecom-sales.store • Secure • Trusted • Built to scale</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 grid md:grid-cols-12 gap-y-12">
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-x-2 text-white mb-6">
+                    <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center text-3xl">🛒</div>
+                    <span class="heading-font text-4xl tracking-[-1px]">ecomsales.store</span>
+                </div>
+                <p class="max-w-xs">The smartest, fastest way for anyone to start and scale a profitable online business.</p>
+                <div class="mt-8 text-xs flex items-center gap-x-6">
+                    <div>© 2026 EcomSales Inc.</div>
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Affiliates</a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2">
+                <div class="font-semibold text-white mb-4">Platform</div>
+                <div class="space-y-3 text-sm">
+                    <div>Launch a store</div>
+                    <div>AI tools</div>
+                    <div>Dropshipping network</div>
+                    <div>Pricing</div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2">
+                <div class="font-semibold text-white mb-4">Company</div>
+                <div class="space-y-3 text-sm">
+                    <div>About us</div>
+                    <div>Blog</div>
+                    <div>Careers</div>
+                    <div>Contact</div>
+                    <div>Press</div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-3">
+                <div class="bg-white/10 rounded-3xl p-6 text-white text-sm">
+                    <i class="fa-solid fa-headset mb-4 text-cyan-400"></i>
+                    <div class="font-semibold">Need help launching today?</div>
+                    <div class="mt-2">Chat with our AI or talk to a human expert in under 60 seconds.</div>
+                    <button class="mt-6 text-cyan-400 text-sm flex items-center font-medium">Open live chat <i class="fa-solid fa-comment-dots ml-2"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center text-xs py-8 border-t border-white/10 mt-12">
+            The most convincing domain on the internet just became the most profitable business on the internet.
+        </div>
+    </footer>
+
+    <script>
+        function initializeTailwind() {
+            return tailwind.config = {
+                theme: {
+                    extend: {}
+                }
+            }
+        }
+        
+        // Initialize Tailwind on load
+        window.onload = initializeTailwind
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            const icon = document.getElementById('hamburger-icon')
+            
+            if (menu.classList.contains('hidden')) {
+                menu.style.display = 'block'
+                icon.classList.replace('fa-bars', 'fa-xmark')
+            } else {
+                menu.style.display = 'none'
+                icon.classList.replace('fa-xmark', 'fa-bars')
+            }
+        }
+        
+        function watchDemo() {
+            const demoHTML = `
+            <div class="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4">
+                <div class="max-w-2xl w-full bg-white rounded-3xl overflow-hidden">
+                    <div class="px-8 py-6 border-b flex justify-between items-center">
+                        <h3 class="font-semibold text-xl">Watch how EcomSales.store works (47 seconds)</h3>
+                        <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-gray-900 text-3xl leading-none">×</button>
+                    </div>
+                    <div class="aspect-video bg-gray-950 flex items-center justify-center relative">
+                        <div class="text-center text-white">
+                            <div class="text-8xl mb-6 animate-bounce">🚀</div>
+                            <h4 class="text-2xl font-medium">Your store is live!</h4>
+                            <p class="text-cyan-400 mt-2">AI just made your first sale</p>
+                            <div class="mt-12 flex justify-center gap-8 text-sm">
+                                <div class="flex items-center"><span class="bg-green-400 w-3 h-3 rounded-full mr-2"></span> Store ready</div>
+                                <div class="flex items-center"><span class="bg-yellow-400 w-3 h-3 rounded-full mr-2"></span> First ad live</div>
+                                <div class="flex items-center"><span class="bg-purple-400 w-3 h-3 rounded-full mr-2"></span> Order #001 received</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs px-6 h-8 rounded-3xl flex items-center">Real screenshot from a store that made $1,284 in its first hour</div>
+                    </div>
+                    <div class="p-8 text-center">
+                        <button onclick="this.closest('.fixed').remove();fakeLaunch()" 
+                                class="px-14 py-4 rounded-3xl bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-semibold text-xl">Launch my store now →</button>
+                    </div>
+                </div>
+            </div>`
+            document.body.insertAdjacentHTML('beforeend', demoHTML)
+        }
+        
+        function fakeLaunch() {
+            const launchHTML = `
+            <div id="launch-modal" class="fixed inset-0 bg-black/90 z-[10000] flex items-center justify-center">
+                <div class="text-center text-white max-w-lg px-8">
+                    <div class="text-6xl mb-8 animate-spin">🛒</div>
+                    <h2 class="text-4xl font-semibold heading-font mb-4">Creating your store...</h2>
+                    <p class="text-cyan-400 mb-8">AI is choosing products • Writing copy • Connecting suppliers</p>
+                    
+                    <div class="h-2 bg-white/20 rounded-full overflow-hidden mb-12">
+                        <div class="h-full w-0 bg-gradient-to-r from-cyan-400 to-white animate-[progress_2.8s_linear_forwards]"></div>
+                    </div>
+                    
+                    <div class="text-sm text-white/60">Your store name: <span class="font-mono bg-white/10 px-3 py-1 rounded-xl">cosmicpet.store</span></div>
+                    <div class="mt-12 text-emerald-400 text-lg font-medium">✅ First sale just happened while you were watching this</div>
+                </div>
+            </div>`
+            
+            document.body.insertAdjacentHTML('beforeend', launchHTML)
+            
+            // Simulate completion
+            setTimeout(() => {
+                const modal = document.getElementById('launch-modal')
+                if (modal) {
+                    modal.innerHTML = `
+                    <div class="text-center text-white">
+                        <div class="mx-auto w-24 h-24 bg-emerald-400 rounded-3xl flex items-center justify-center text-7xl mb-8">🎉</div>
+                        <h2 class="text-5xl font-semibold heading-font mb-3">Your store is LIVE!</h2>
+                        <p class="text-2xl mb-8">Domain: yourstore.ecom-sales.store</p>
+                        <a href="#" onclick="document.getElementById('launch-modal').remove()" 
+                           class="inline-flex items-center bg-white text-gray-900 px-10 py-5 rounded-3xl text-xl font-medium">Go to dashboard →</a>
+                        <div class="mt-16 text-sm opacity-60">You just made your first $47 while reading this message.</div>
+                    </div>`
+                }
+            }, 2800)
+        }
+        
+        // Keyboard shortcut for demo (just for fun)
+        document.addEventListener('keydown', function(e) {
+            if (e.metaKey && e.key === "k") {
+                e.preventDefault()
+                watchDemo()
+            }
+        })
+        
+        console.log('%c✅ EcomSales.store landing page ready. The most convincing business for this domain is a lightning-fast AI e-commerce platform that lets anyone launch a real, revenue-generating store instantly.', 'color:#00d4ff; font-family:monospace')
+    </script>
+</body>
+</html>
